@@ -1,3 +1,33 @@
-// Place all the styles related to the posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+  background-color: #fafafa;
+  font-size: 14px;
+  color: #262626;
+}
+.alert{
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+.alert-denger{
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+.container{
+  max-width: 810px;
+  margin: 100px auto;
+  padding: 10px 10px 10px;
+  border-radius: 0.25rem;
+  background-color: #fff;
+  text-align: center;
+}
+.form-wrap{
+  max-width: 400px;
+  margin: 50px auto;
+}
+.title {
+  font-size: 35px;
+  font-weight: bold;
+}
