@@ -1,0 +1,1 @@
+# Takahashi_Rails_kensyu
