@@ -1,2 +1,19 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<div class= "container">
+  <% @post.each do |post| %>
+    <div class= "card-wrap">
+      <div class= "card">
+        <div class= "user-name">
+          <%= post.user.name %>
+        </div>
+        <%= image_tag post.image.url %>
+        <div class= "reaction">
+        </div>
+        <div class= "reaction-text">
+        </div>
+        <form>
+          <input class="comment">
+        </form>
+      </div>
+    </div>
+  <% end %>
+</div>
