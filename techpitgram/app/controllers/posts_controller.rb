@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+
   def index
     @post = Post.all
   end
@@ -11,8 +12,10 @@ class PostsController < ApplicationController
     redirect_to action: 'index'
   end
 
-  def delete
-
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to action: 'index'
   end
 
   private
@@ -20,4 +23,5 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:caption, :image)
   end
+
 end
