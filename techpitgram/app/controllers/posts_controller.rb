@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
+    @post = Post.create(caption: post_params[:caption], image: post_params[:image], user_id: current_user.id)
     redirect_to action: 'index'
   end
 
