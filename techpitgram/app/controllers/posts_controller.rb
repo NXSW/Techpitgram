@@ -7,10 +7,17 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(caption: params[:caption], image: params[:image])
+    @post = Post.create(post_params)
+    redirect_to action: 'index'
   end
 
   def delete
-    
+
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:caption, :image)
   end
 end
