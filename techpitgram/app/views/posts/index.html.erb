@@ -2,8 +2,13 @@
   <% @post.each do |post| %>
     <div class= "card-wrap">
       <div class= "card">
-        <div class= "user-name">
-          <%= post.user.name %>
+        <div class= "card__header">
+          <div class= "user-name">
+            <%= post.user.name %>
+          </div>
+          <% if user_signed_in? && current_user.id == post.user_id %>
+            <%= link_to '削除', "/posts/#{post.id}", method: :delete %>
+          <% end %>
         </div>
         <%= image_tag post.image.url %>
         <div class= "reaction">
