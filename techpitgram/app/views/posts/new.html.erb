@@ -1,0 +1,7 @@
+<div class="post-form">
+  <%= form_for (@post) do |f| %>
+    <%= f.text_field :caption, placeholder: "キャプションを書く" %>
+    <%= f.file_field :image %>
+    <%= f.submit value: '投稿' %>
+  <% end %>
+</div>
