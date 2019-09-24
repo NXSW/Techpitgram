@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
 before_action :set_post
 
   def create
-    @comment = @post.comments.new(commnt_params)
+    @comment = @post.comments.new(comment_params)
     if @comment.save
       respond_to do |format|
         format.html { redirect_to root_path }
