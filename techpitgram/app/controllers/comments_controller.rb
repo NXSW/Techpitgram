@@ -19,7 +19,8 @@ before_action :set_post
   private
 
   def comment_params
-    params.require(:comment).permit(:text).merge(user_id: current_user.id)
+    params.merge(user_id: current_user.id)
+    params.require(:comment).permit(:text)
   end
 
   def set_post
