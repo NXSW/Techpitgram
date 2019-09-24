@@ -1,4 +1,3 @@
-<% @post = Post.new unless @post %>
 <div class="post-form">
   <%= form_for (@post) do |f| %>
     <%= f.text_field :caption, placeholder: "キャプションを書く" %>
