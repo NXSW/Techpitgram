@@ -1,7 +1,10 @@
 class PostsController < ApplicationController
+  before_action :set_post
 
   def index
     @posts = Post.all
+    @comments = @post.comments
+    @comment = Comment.new
   end
 
   def new
@@ -23,6 +26,10 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:caption, :image)
+  end
+
+  def set_post
+    @post = Post.find_by(params[:post_id])
   end
 
 end
