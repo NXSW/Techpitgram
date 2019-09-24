@@ -23,7 +23,6 @@
         </div>
         <%= form_for @comment, url: post_comments_path(@post) do |f|%>
           <%= f.text_field :text, placeholder: "コメント..." %>
-          <%# <% f.hidden_field :user_id, value: current_user.id %>
           <%= f.submit '送信' %>
         <% end %>
       </div>
