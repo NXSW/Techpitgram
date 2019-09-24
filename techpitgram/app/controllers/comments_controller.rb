@@ -6,7 +6,6 @@ before_action :set_post
     if @comment.save
       respond_to do |format|
         format.html { redirect_to root_path }
-        format.json
       end
     end
   end
