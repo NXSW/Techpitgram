@@ -15,10 +15,12 @@
         </div>
         <div class= "reaction-text">
           <h2>コメント一覧</h2>
-            <%= render @comments %>
+            <div class= "comments">
+              <%= render @comments %>
+            </div>
         </div>
-        <%= form_for @comment, url: post_comments_path(@post) do |f|%>
-          <%= f.text_field :text, placeholder: "コメント..." %>
+        <%= form_for @comment, url: post_comments_path(@post), class: "new_comment" do |f|%>
+          <%= f.text_field :text, placeholder: "コメント...", class: "comment_text" %>
           <%= f.submit '送信' %>
         <% end %>
       </div>
