@@ -15,11 +15,7 @@
         </div>
         <div class= "reaction-text">
           <h2>コメント一覧</h2>
-          <% @comments.each do |comment| %>
-            <%= comment.post.user.name%>
-            <%= comment.text%>
-            <%= link_to '削除', "/posts/#{comment.post_id}/comments/#{comment.id}", method: :delete %>
-          <% end %>
+            <%= render @comments %>
         </div>
         <%= form_for @comment, url: post_comments_path(@post) do |f|%>
           <%= f.text_field :text, placeholder: "コメント..." %>
