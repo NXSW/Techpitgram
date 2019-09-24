@@ -16,7 +16,7 @@
         <div class= "reaction-text">
           <h2>コメント一覧</h2>
           <% @comments.each do |comment| %>
-            <%= comment.user.name%>
+            <%= comment.post.user.name%>
             <%= comment.text%>
             <%= link_to '削除', "/posts/#{comment.post_id}/comments/#{comment.id}", method: :delete %>
           <% end %>
