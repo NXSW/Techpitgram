@@ -1,3 +1,5 @@
-<%= comment.post.user.name%>
-<%= comment.text%>
-<%= link_to '削除', "/posts/#{comment.post_id}/comments/#{comment.id}", method: :delete %>
+<div class= "comment", data-id= <%= comment.id %>>
+  <%= comment.post.user.name%>
+  <%= comment.text%>
+  <%= link_to '削除', "/posts/#{comment.post.id}/comments/#{comment.id}.json", method: :delete, class: "comment_remove", remote: true %>
+</div>
