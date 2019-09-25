@@ -16,7 +16,7 @@
         <div class= "reaction-text">
           <h2>コメント一覧</h2>
             <div class= "comments">
-              <%= render @comments %>
+              <%= render "comments/comment", post: post %>
             </div>
         </div>
         <%= form_for @comment, url: "/posts/#{post.id}/comments", id: "new_comment" do |f|%>
