@@ -19,7 +19,7 @@
               <%= render @comments %>
             </div>
         </div>
-        <%= form_for @comment, url: post_comments_path(@post), class: "new_comment" do |f|%>
+        <%= form_for @comment, url: "/posts/#{post.id}/comments", id: "new_comment" do |f|%>
           <%= f.text_field :text, placeholder: "コメント...", class: "comment_text" %>
           <%= f.submit '送信' %>
         <% end %>
