@@ -4,16 +4,14 @@ before_action :set_post
   def create
     @comment = @post.comments.new(comment_params)
     if @comment.save
-      respond_to do |format|
-        format.html { redirect_to root_path }
-      end
+      redirect_to root_path
     end
   end
 
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
-    redirect_to root_path
+    render json: { id: @comment.id }
   end
 
   private

@@ -1,0 +1,7 @@
+<% post.comments.each do |comment| %>
+  <div class= 'comment', data-id= <%= comment.id %>>
+    <%= post.user.name%>
+    <%= comment.text%>
+    <%= link_to '削除', "/posts/#{post.id}/comments/#{comment.id}.json", method: :delete, class: "comment_remove", remote: true %>
+  </div>
+<% end %>
