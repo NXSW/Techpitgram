@@ -12,6 +12,7 @@
         </div>
         <%= image_tag post.image.url %>
         <div class= "reaction">
+          <%= render 'likes/like', post: post %>
         </div>
         <div class= "reaction-text">
           <h2>コメント一覧</h2>
