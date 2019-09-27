@@ -2,8 +2,7 @@ class LikesController < ApplicationController
 before_action :set_variables
 
   def like
-    like = current_user.likes.new(post_id: @post.id)
-    like.save
+    like = current_user.likes.create(post_id: @post.id)
   end
 
   def unlike
