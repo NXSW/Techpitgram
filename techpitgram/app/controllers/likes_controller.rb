@@ -6,7 +6,7 @@ before_action :set_variables
   end
 
   def unlike
-    like = current_user.likes.find_by(post_id: @post.id)
+    like = Like.find(params[:id])
     like.destroy
   end
 
