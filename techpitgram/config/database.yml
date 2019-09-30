@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: techpitgram_production
-  username: techpitgram
-  password: <%= ENV['TECHPITGRAM_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
