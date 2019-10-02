@@ -1,7 +1,16 @@
-<div class="post-form">
+<%= render partial: 'layouts/header' %>
+<div class= "post-form">
+  <div class= "post-form__title">
+    投稿画面
+  </div>
   <%= form_for (@post) do |f| %>
-    <%= f.text_field :caption, placeholder: "キャプションを書く" %>
-    <%= f.file_field :image %>
-    <%= f.submit value: '投稿' %>
+    <%= f.text_field :caption, placeholder: "キャプションを書く", class: "post-caption" %>
+    <label>
+    <div class= "post-file">
+      ファイルを選択
+    <%= f.file_field :image, class: "hidden-file" %>
+    </div>
+    </label>
+    <%= f.submit value: '投稿する', class: "file-post-button" %>
   <% end %>
 </div>

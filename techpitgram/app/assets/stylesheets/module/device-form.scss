@@ -1,0 +1,71 @@
+.form-wrap{
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 100px 250px;
+  background-color: #fff;
+}
+
+.form-title {
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 15px;
+}
+
+.form-label {
+  padding-left: 10px;
+  display: block;
+  font-weight: bold;
+}
+
+.form-input {
+  display: block;
+  margin: 0 auto 10px;
+  padding: 3px 10px;
+  height: 30px;
+  width: 90%;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+.remember {
+  text-align: center;
+    &__check {
+      font-size: 20px;
+    }
+    &__label {
+
+    }
+}
+
+.signin-button {
+  display: block;
+  margin: 5px auto 10px;
+  height: 40px;
+  width: 95%;
+  font-size: 15px;
+  color: #fff;
+  border: solid 1px #007bff;
+  border-radius: 10px;
+  background-color: #007bff;
+}
+
+.account {
+  width: 100%;
+  text-align: center;
+    &__text {
+    }
+    &__link {
+      text-decoration: none;
+      color: #007bff;
+    }
+}
+
+.forget-pw {
+  width: 100%;
+  text-align: center;
+    &__link {
+      text-decoration: none;
+      color: #007bff;
+    }
+}
+
