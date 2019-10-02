@@ -1,7 +1,10 @@
-<% post.comments.each do |comment| %>
-  <div class= 'comment-details', data-id= <%= comment.id %>>
-    <span class= "comment-details__user-name"><%= post.user.name %></span>
-    <span class= "comment-details__text"><%= comment.text %></span>
-    <%= link_to image_tag("dust-icon.png", size: "13x13"), "/posts/#{post.id}/comments/#{comment.id}.json", method: :delete, class: "comment_remove", remote: true %>
-  </div>
+
+<% if post.comments %>
+  <% post.comments.each do |comment| %>
+    <div class= 'comment-details', data-id= <%= comment.id %>>
+      <span class= "comment-details__user-name"><%= post.user.name %></span>
+      <span class= "comment-details__text"><%= comment.text %></span>
+      <%= link_to image_tag("dust-icon.png", size: "13x13"), "/posts/#{post.id}/comments/#{comment.id}.json", method: :delete, class: "comment_remove", remote: true %>
+    </div>
+  <% end >
 <% end %>

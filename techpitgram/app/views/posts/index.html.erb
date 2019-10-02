@@ -1,5 +1,6 @@
 <%= render partial: 'layouts/header' %>
 <div class= "container">
+ <% unless @posts.blank? %>
   <% @posts.each do |post| %>
     <div class= "card-wrap">
       <div class= "card">
@@ -26,6 +27,6 @@
           <%= f.submit '送信', class: "comment-post" %>
         <% end %>
       </div>
-    </div>
+    <% end %>
   <% end %>
 </div>
