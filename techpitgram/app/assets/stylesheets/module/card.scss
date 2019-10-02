@@ -1,10 +1,6 @@
-.container {
-  max-width: 1140px;
-  margin: 0 auto;
-}
 .card-wrap {
   margin: 40px auto;
-  width: 985px;
+  max-width: 700px;
 }
 .card {
   position: relative;
@@ -14,19 +10,68 @@
   background-clip: border-box;
   border: 1px solid rgba(0,0,0,0.125);
   border-radius: 0.25rem;
-  &__header {
-    border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
-    align-items: center;
-    padding: 0.75rem 1.25rem;
-    margin-bottom: 0;
-    background-color: rgba(0,0,0,0.03);
-    border-bottom: 1px solid rgba(0,0,0,0.125);
+}
+.card-header {
+  position: relative;
+  border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+  padding: 15px 15px;
+  margin-bottom: 0;
+  background-color: rgba(0,0,0,0.03);
+  border-bottom: 1px solid rgba(0,0,0,0.125);
+    &__user-name {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 17px;
+    }
+    &__post-delete {
+      position: absolute;
+      right: 20px;
+      top: 18px;
+    }
+}
+
+.main-content {
+  max-width: 100%;
+  height: auto;
+}
+
+.reaction {
+}
+
+.like-link {
+  padding: 10px 0 0 10px;
+}
+
+.comment {
+  padding: 10px;
+}
+
+.comment-details {
+  font-size: 15px;
+    &__user-name {
+      font-weight: bold;
+    }
+    &__text {
+    }
+}
+
+#new_comment{
+  padding: 10px;
+}
+
+.comment_form {
+  padding: 10px;
+  border: none;
+  width: 90%;
+  &:focus {
+    outline: none;
   }
 }
-.reaction {
-  height:50px;
-  margin: 12px 0;
+
+.comment-post {
+  font-size: 15px;
+  color: dodgerblue;
+  border: solid 1px #fff;
 }
-.reaction-text {
-  height: 50px;
-}
+
+

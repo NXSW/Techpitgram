@@ -3,27 +3,27 @@
   <% @posts.each do |post| %>
     <div class= "card-wrap">
       <div class= "card">
-        <div class= "card__header">
-          <div class= "user-name">
+        <ul class= "card-header">
+          <li class= "card-header__user-name">
             <%= post.user.name %>
-          </div>
+          </li>
           <% if user_signed_in? && current_user.id == post.user_id %>
-            <%= link_to '削除', "/posts/#{post.id}", method: :delete %>
+          <li class= "card-header__post-delete">
+            <%= link_to image_tag("dust-icon.png", size: "20x20"), "/posts/#{post.id}", method: :delete, class: "post-delete__link" %>
+          </li>
           <% end %>
-        </div>
-        <%= image_tag post.image.url %>
+        </ul>
+        <%= image_tag post.image.url, size: "700x700", class: "main-content" %>
         <div class= "reaction">
           <%= render 'likes/like', post: post %>
         </div>
-        <div class= "reaction-text">
-          <h2>コメント一覧</h2>
-            <div class= "comments">
-              <%= render "comments/comment", post: post %>
-            </div>
+        <div class= "comment">
+          <%= render "comments/comment", post: post %>
         </div>
+        <hr width=90%>
         <%= form_for @comment, url: "/posts/#{post.id}/comments", id: "new_comment" do |f|%>
-          <%= f.text_field :text, placeholder: "コメント...", class: "comment_text" %>
-          <%= f.submit '送信' %>
+          <%= f.text_field :text, placeholder: "コメント...", class: "comment_form" %>
+          <%= f.submit '送信', class: "comment-post" %>
         <% end %>
       </div>
     </div>
