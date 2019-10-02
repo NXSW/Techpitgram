@@ -3,4 +3,7 @@
   <div class= "post-button">
     <%= link_to '投稿', new_post_path, class: 'post-button__text' %>
   </div>
+  <div class= "logout-button">
+    <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'logout-button__text' %>
+  </div>
 </nav>
