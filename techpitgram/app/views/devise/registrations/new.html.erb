@@ -1,7 +1,28 @@
 <div class="alert alert-denger">
     アカウント登録もしくはサインインしてください
 </div>
+<% if flash[:recaptcha_error] %>
+  <div class="text">
+    <p><span class="error"><%= flash[:recaptcha_error] %></span></p>
+  </div>
+<% end %>
+
   <div class="container">
+    <%= form_tag({action: :create}, {method: :post}) do %>
+      <input id="recaptcha_token" name="recaptcha_token" type="hidden"/>
+      <%= submit_tag "送信", class: "submit-recaptcha btn", disabled: true %>
+    <% end %>
+
+    <script src="https://www.google.com/recaptcha/api.js?render=6LdiZ7wUAAAAAA9ipfCkhxOn6czHm2FItnTKLe4j&ver=3.0"></script>
+    <script>
+    grecaptcha.ready(function() {
+      grecaptcha.execute('6LdiZ7wUAAAAAA9ipfCkhxOn6czHm2FItnTKLe4j', {action: 'login'}).then(function(token) {
+        $('#recaptcha_token').val(token);
+        $('.submit-recaptcha').prop('disabled', false);
+      });
+    });
+    </script>
+
     <div class="form-wrap">
       <%= image_tag 'app-title.png', size: '200x50', class: 'form-title' %>
 
@@ -20,6 +41,7 @@
           <%= f.label :password_confirmation, class: "form-label" %>
           <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-input" %>
 
+          <input id="recaptcha_token" name="recaptcha_token" type="hidden"/>
           <%= f.submit "登録する", class: "signin-button" %>
       <% end %>
 
