@@ -10,9 +10,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    unless verify_recaptcha?(params[:recaptcha_token])
+      flash.now[:recaptcha_error] = I18.t('recaptcha.errors.verification_failed')
+      return render action: :new
+    end
+    super
+  end
 
   # GET /resource/edit
   # def edit
