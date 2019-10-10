@@ -2,10 +2,9 @@ class CommentsController < ApplicationController
 before_action :set_post
 
   def create
-    @comment = @post.comments.new(comment_params)
-    if @comment.save
-      redirect_to root_path
-    end
+    comment = @post.comments.new(comment_params)
+    comment.user_id = current_user.id
+    redirect_to root_path if comment.save
   end
 
   def destroy
@@ -17,7 +16,6 @@ before_action :set_post
   private
 
   def comment_params
-    params.merge(user_id: current_user.id)
     params.require(:comment).permit(:text)
   end
 
