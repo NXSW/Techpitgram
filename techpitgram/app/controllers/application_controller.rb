@@ -4,6 +4,7 @@ require 'uri'
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
+  include Pundit
 
   RECAPTCHA_MINIMUM_SCORE = 0.5
   RECAPTCHA_ACTION = 'login'
